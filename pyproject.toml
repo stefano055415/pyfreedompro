@@ -3,7 +3,6 @@ requires = [
     "setuptools>=42",
     "wheel",
     "aiohttp",
-    "asyncio",
-    "async-timeout"
+    "asyncio"
 ]
 build-backend = "setuptools.build_meta"

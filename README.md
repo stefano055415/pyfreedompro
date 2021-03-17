@@ -13,12 +13,16 @@ Example
 ```python
 import asyncio
 import pyfreedompro
+import aiohttp
 
 async def main():
-    response = await pyfreedompro.get_list(API_KEY);
+    httpsession = aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False));
+    response = await pyfreedompro.get_list(httpsession, APY_KEY);
     print(response);
+    await httpsession.close();
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
+
 ```
 
 
